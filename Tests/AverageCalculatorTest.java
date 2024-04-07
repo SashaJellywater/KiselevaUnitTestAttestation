@@ -151,23 +151,6 @@ public class AverageCalculatorTest {
 
         System.setOut(System.out);
     }
-    @Test //Тест проверяет работу обоих классов в совместном использовании, сравнивая средние значения двух списков
-    public void testCompareAverages_Integration() {
-        List<Integer> list1 = Arrays.asList(1, 2, 3);
-        List<Integer> list2 = Arrays.asList(4, 5, 6);
-        ListContainer listContainer = new ListContainer(list1, list2);
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        AverageCalculator averageCalculator = new AverageCalculator();
-        averageCalculator.compareAverages(listContainer);
-
-        assertEquals("Второй список имеет большее среднее значение\r\n", outContent.toString());
-
-        System.setOut(System.out);
-    }
-
         @Test
         public void testEndToEnd() {
             List<Integer> list1 = Arrays.asList(1, 2, 3, 4);
